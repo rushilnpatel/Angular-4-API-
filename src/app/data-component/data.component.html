@@ -1,0 +1,46 @@
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+      <h1> Lets display data</h1>
+    </div>
+    <div class="panel-body">
+       <h3><input type="text" placeholder="Search.....!" [(ngModel)]="search"></h3>
+       <p>{{search}}</p>
+        <table class="table table-hover table-responsive">
+            <thead>
+              <th>Name</th>
+              <th>category</th>
+              <th>Amount</th>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let q of items">
+                <td> {{q.name}} </td>
+                <td> {{q.category}} </td>
+                <td> {{q.amount}} </td>
+                <td> <button class="glyphicon glyphicon-exclamation-sign btn btn-info" (click)="getMore(q)"></button></td>
+                <td> <button class="glyphicon glyphicon-trash btn btn-danger" (click)="delData(q.id)"></button></td>
+              </tr>
+            </tbody>
+          </table>  
+          <blockquote>
+                <ul *ngFor="let i of Details">
+                    <li>Company : {{i.company}}</li>
+                    <li>Descriptions : {{i.descriptions}}</li>
+                    <li>Profit : {{i.profit}}</li>
+                </ul>
+                <ul *ngIf="id">
+                  <li>Id : {{id}}</li>
+                  <li>Name : {{name}}</li>
+                  <li>Category : {{category}}</li>
+                  <li>Amount: {{amount}}</li>
+              </ul>
+            </blockquote>
+          <div class="panel-footer">
+            
+            <button class="btn btn-lg btn-success" (click)="addData()">Add Data </button>
+          </div>
+    </div>
+   
+</div>
+
+  <!-- <button (click)="onclick()">sort</button> -->
